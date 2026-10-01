@@ -15,6 +15,7 @@
     --radius-lg:    20px;
 }
 
+
 * {
     box-sizing: border-box;
 }
@@ -92,7 +93,6 @@ header .cta:hover {
     color: var(--white);
     transform: translateY(-1px);
 }
-
 
 .menu {
     position: relative;
@@ -173,6 +173,7 @@ header .cta:hover {
     background: var(--bg-soft);
     color: var(--accent-dark);
 }
+
 
 .hero {
     display: flex;
@@ -307,6 +308,12 @@ header .cta:hover {
     line-height: 1.7;
 }
 
+.text-content h3 {
+    margin: 24px 0 8px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
 .benefits-list {
     list-style: none;
     padding: 0;
@@ -330,6 +337,42 @@ header .cta:hover {
     color: var(--accent-dark);
     font-weight: bold;
     font-size: 18px;
+}
+
+/* Нумерованные шаги */
+.steps-list {
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+    margin: 8px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.steps-list li {
+    position: relative;
+    padding-left: 44px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.steps-list li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -651,6 +694,7 @@ header .cta:hover {
     color: var(--accent-dark);
 }
 
+
 .faq {
     max-width: 800px;
     margin: 0 auto;
@@ -717,6 +761,63 @@ header .cta:hover {
 }
 
 
+.signup {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.signup h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+    margin-top: 32px;
+}
+
+.signup-form input,
+.signup-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.signup-form input::placeholder,
+.signup-form textarea::placeholder {
+    color: #9ca3af;
+}
+
+.signup-form input:focus,
+.signup-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 176, 32, 0.15);
+}
+
+.signup-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.signup-form .btn-primary {
+    width: 100%;
+    padding: 16px 28px;
+}
+
 .contacts {
     display: flex;
     flex-direction: column;
@@ -759,6 +860,86 @@ header .cta:hover {
 .contact-btn.whatsapp { background: #25d366; }
 .contact-btn.phone    { background: var(--primary); }
 .contact-btn.vk       { background: #0077ff; }
+
+
+.footer {
+    background: #1a1a1a;
+    color: #d1d5db;
+    padding: 60px 40px 24px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-col h3 {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-col p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #9ca3af;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-col ul a {
+    font-size: 15px;
+    color: #d1d5db;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-note {
+    color: #4b5563;
+}
 
 
 @media (min-width: 700px) {
@@ -857,11 +1038,30 @@ header .cta:hover {
     .section-text h2,
     .pricing h2,
     .faq h2,
-    .contacts h2 {
+    .contacts h2,
+    .signup h2 {
         font-size: 28px;
     }
-}
 
+    .footer {
+        padding: 50px 20px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .footer-col ul {
+        align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 
 @media (max-width: 600px) {
     header {
@@ -950,6 +1150,10 @@ header .cta:hover {
         padding: 40px 16px;
     }
 
+    .signup {
+        padding: 50px 16px;
+    }
+
     .contacts {
         padding: 40px 16px;
     }
@@ -965,106 +1169,5 @@ header .cta:hover {
     * {
         animation: none !important;
         transition: none !important;
-    }
-}
-
-.footer {
-    background: #1a1a1a;
-    color: #d1d5db;
-    padding: 60px 40px 24px;
-    margin-top: 40px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.footer-col h3 {
-    color: var(--white);
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0 0 12px;
-}
-
-.footer-col h4 {
-    color: var(--white);
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0 0 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.footer-col p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.6;
-    color: #9ca3af;
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-col ul a {
-    font-size: 15px;
-    color: #d1d5db;
-    transition: color 0.2s ease;
-}
-
-.footer-col ul a:hover {
-    color: var(--accent);
-}
-
-.footer-bottom {
-    max-width: 1100px;
-    margin: 40px auto 0;
-    padding-top: 24px;
-    border-top: 1px solid #333;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    font-size: 14px;
-    color: #6b7280;
-}
-
-.footer-bottom p {
-    margin: 0;
-}
-
-.footer-note {
-    color: #4b5563;
-}
-
-
-@media (max-width: 900px) {
-    .footer {
-        padding: 50px 20px 20px;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        text-align: center;
-    }
-
-    .footer-col ul {
-        align-items: center;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
     }
 }
