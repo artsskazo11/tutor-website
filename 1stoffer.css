@@ -1171,3 +1171,86 @@ header .cta:hover {
         transition: none !important;
     }
 }
+
+.approach {
+    background: linear-gradient(135deg, #fff8ec 0%, #ffffff 100%);
+    border-radius: var(--radius-lg);
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.approach h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+}
+
+.approach .text-content {
+    gap: 20px;
+}
+
+.approach .text-content p {
+    position: relative;
+    padding-left: 32px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.approach .text-content p::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-dark);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.approach-goal {
+    background: var(--white);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 20px 24px 20px 32px !important;
+    box-shadow: var(--shadow-sm);
+    margin-top: 8px;
+}
+
+.approach-goal::before {
+    content: "🎯" !important;
+    font-size: 20px !important;
+    left: 16px !important;
+}
+
+@media (max-width: 900px) {
+    .approach {
+        padding: 40px 24px;
+        margin: 20px auto;
+    }
+
+    .approach h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .approach {
+        padding: 30px 16px;
+        border-radius: var(--radius);
+    }
+
+    .approach h2 {
+        font-size: 24px;
+    }
+
+    .approach .text-content p {
+        padding-left: 26px;
+        font-size: 15px;
+    }
+
+    .approach-goal {
+        padding: 16px 18px 16px 26px !important;
+    }
+}
